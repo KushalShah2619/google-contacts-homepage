@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Google Contacts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="left-side-header">
+                <div class="menu-option-icon">
+                    <img src="./img/menu.png" width="25" height="25" alt="menu">
+                </div>
+                <div class="contact-logo">
+                    <img src="./img/contacts.png" width="44" height="44">
+                    <span>Contacts</span>
+                </div>
+            </div>
+
+            <div class="middle-header">
+                <div class="search-option-icon">
+                    <img src="./img/search.svg">
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="right-side-header">
+                <div class="help-option-icon">
+                    <img src="./img/help.svg" width="25" height="25" alt="help">
+                </div>
+                <div class="setting-option-icon">
+                    <img src="./img/setting.svg" width="25" height="25" alt="setting">
+                </div>
+                <div class="google-apps-option-icon">
+                    <img src="./img/dots-menu.svg" width="25" height="25" alt="apps">
+                </div>
+                <div class="account-info">
+                    <img src="./img/sprinklr-logo.png" width="85" height="35" alt="sprinklr">
+                    <span>K</span>
+                </div>
+            </div>
+        </div>
+        <div class="main-body">
+            <div class="option-menu" style="visibility: visible;">
+                <div class="create-button-div">
+                    <button> <img src="./img/plus.svg" width="20" height="20"> <span>&nbsp Create contact</span></button>
+                </div>
+
+                <div class="option-div contact-option" style="margin-top: 10px;">
+                    <a class="option-link  active-option" href="">
+                        <img src="./img/person.svg" width="15px" height="15px">
+                        <span>Contacts</span>
+                    </a>
+                </div>
+
+                <div class="option-div frequent-option">
+                    <a class="option-link" href="">
+                        <img src="./img/frequentlyUse.svg" width="15px" height="15px">
+                        <span>Frequently contacted</span>
+                    </a>
+                </div>
+
+                <div class="option-div directory-option">
+                    <a class="option-link" href="">
+                        <img src="./img/directory.svg" width="15px" height="15px">
+                        <span>Directory</span>
+                    </a>
+                </div>
+
+                <div class="option-div merge-option">
+                    <a class="option-link" href="">
+                        <img src="./img/merge.svg" width="15px" height="15px">
+                        <span>Merge & fix</span>
+                    </a>
+                </div>
+
+                <div class="horizontal-line"></div>
+
+                <div class="option-div label-option">
+                    <a class="option-link" href="">
+                        <img id="open-label-option" src="./img/closeDiv.svg" width="15px" height="15px">
+                        <span>Labels</span>
+                    </a>
+                </div>
+
+                <div class="option-div create-new-label-option">
+                    <a class="option-link" style="cursor: pointer;">
+                        <img src="./img/plus.svg" width="20px" height="20px">
+                        <span>Create label</span>
+                    </a>
+                </div>
+
+                <div class="horizontal-line"></div>
+
+                <div class="option-div import-option">
+                    <a class="option-link" href="">
+                        <img src="./img/import.svg" width="15px" height="15px">
+                        <span>Import</span>
+                    </a>
+                </div>
+
+                <div class="option-div export-option">
+                    <a class="option-link" href="">
+                        <img src="./img/export.svg" width="15px" height="15px">
+                        <span>Export</span>
+                    </a>
+                </div>
+
+                <div class="option-div print-option">
+                    <a class="option-link" href="">
+                        <img src="./img/print.svg" width="15px" height="15px">
+                        <span>Print</span>
+                    </a>
+                </div>
+
+                <div class="horizontal-line"></div>
+
+                <div class="option-div otherContacts-option">
+                    <a class="option-link" href="">
+                        <img src="./img/otherContacts.svg" width="15px" height="15px">
+                        <span>Other Contacts</span>
+                    </a>
+                </div>
+
+                <div class="option-div trash-option">
+                    <a class="option-link" href="">
+                        <img src="./img/trash.svg" width="20px" height="20px">
+                        <span>Trash</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="contact-display">
+                <div class="display-body">
+                    <div class="image-open-book">
+                        <img src="./img/open-book.png" width="200" height="200">
+                    </div>
+                    <div class="contact-info">No contacts yet</div>
+                    <div class="link-contacts">
+                        <a href=""><img src="./img/person.svg" width="12px" height="12px">&nbsp Create contact</a>
+                        <a href=""><img src="./img/import.svg" width="15px" height="15px">&nbsp Import contacts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let optionsMenu = document.getElementsByClassName("option-menu")[0].children;
+
+        for(let i=1; i<optionsMenu.length; i++) {
+            if((optionsMenu[i].classList[1] !== "label-option") && (optionsMenu[i].classList[1] !== "create-new-label-option")) {
+                optionsMenu[i].addEventListener("click", () => {
+                    event.preventDefault();
+                    
+                    let prvActiveClass = document.getElementsByClassName("active-option")[0];
+                    prvActiveClass.classList.remove("active-option");
+
+                    (optionsMenu[i].children)[0].classList.add("active-option")
+                })
+            }
+        }
+
+        let labelOption = document.getElementsByClassName("label-option")[0];
+
+        labelOption.addEventListener("click", () => {
+            event.preventDefault();
+            let prevSvgTag = labelOption.getElementsByTagName("img")[0];
+            if(prevSvgTag.id === "open-label-option") {
+                prevSvgTag.src = "./img/openDiv.svg";
+                prevSvgTag.id = "close-label-option";
+                document.getElementsByClassName("create-new-label-option")[0].style.display = "none";
+            }
+            else if(prevSvgTag.id === "close-label-option"){
+                prevSvgTag.src = "./img/closeDiv.svg";
+                prevSvgTag.id = "open-label-option";
+                document.getElementsByClassName("create-new-label-option")[0].style.display = "";
+            }
+        })
+
+        let menuOptionButton = document.getElementsByClassName("menu-option-icon")[0];
+        let optionMenuDiv = document.getElementsByClassName("option-menu")[0];
+        menuOptionButton.addEventListener("click", () => {
+            if(optionMenuDiv.style.visibility === "hidden") {
+                optionMenuDiv.style.display = "block";
+                optionMenuDiv.style.visibility = "visible";
+                optionMenuDiv.style.transition = "visibility 0.25s linear";
+            }
+            else if(optionMenuDiv.style.visibility === "visible") {
+                optionMenuDiv.style.visibility = "hidden";
+                optionMenuDiv.style.transform = "translateX(0)";
+                optionMenuDiv.style.transition = "transform .25s linear ,visibility 0.25s linear";
+            }
+        })
+
+        function handleOptionMenuVisibility(event) {
+            if(event.matches) {
+                optionMenuDiv.style.visibility = "hidden";
+            }
+        }
+
+        const mediaQuery1200 = window.matchMedia('(max-width: 1200px)');
+        mediaQuery1200.addListener(handleOptionMenuVisibility);
+        handleOptionMenuVisibility(mediaQuery1200);
+
+        let searchIconClass = document.getElementsByClassName("search-option-icon")[0];
+        let searchInputArea = searchIconClass.getElementsByTagName("input")[0];
+        let searchIcon = searchIconClass.getElementsByTagName("img")[0];
+
+        function handleSearchInputArea() {
+            console.log(searchIcon.src);
+            if(searchInputArea.style.display === "none") {
+                searchInputArea.style.display = "";
+                searchIcon.src = "./img/rightArrow.svg";
+                searchIcon.style.width = "24px";
+                searchIcon.style.height = "24px";
+
+            } else {
+                searchInputArea.style.display = "none";
+                searchIcon.src = "./img/search.svg";
+                searchIcon.style.width = "";
+                searchIcon.style.height = "";
+            }
+        }
+
+        function handleMediaQueries900(event) {
+            if(event.matches) {
+                searchInputArea.style.display = "none";
+                searchIcon.addEventListener("click", handleSearchInputArea)
+            }
+        }
+
+        function handleRemoveSearchAreaInputListener(event) {
+            if(event.matches) {
+                searchInputArea.style.display = "";
+                searchIcon.removeEventListener("click", handleSearchInputArea);
+            }
+            
+        }
+
+        const mediaQuery900 = window.matchMedia("(max-width: 900px)");
+        mediaQuery900.addListener(handleMediaQueries900); 
+        handleMediaQueries900(mediaQuery900);
+
+        const mediaQuery901 = window.matchMedia("(min-width: 901px)");
+        mediaQuery901.addListener(handleRemoveSearchAreaInputListener);
+        handleRemoveSearchAreaInputListener(mediaQuery901);
+
+    </script>
+</body>
+</html>
