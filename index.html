@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width">
   <title>Google Contacts</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="modalStyle.css">
+  <link rel="stylesheet" href="headerStyle.css">
+  <link rel="stylesheet" href="sidebarStyle.css">
 </head>
+
 <body>
     <div class="main">
         <div class="header">
@@ -33,19 +37,99 @@
                 <div class="setting-option-icon">
                     <img src="./img/setting.svg" width="25" height="25" alt="setting">
                 </div>
-                <div class="google-apps-option-icon">
+
+                <div class="google-apps-option-icon" id="google-apps-option-icon">
                     <img src="./img/dots-menu.svg" width="25" height="25" alt="apps">
                 </div>
+                <div class="google-app-overlay google-app-overlay-display" id="google-app-overlay">
+                    <div class="gApps-icon">
+                        <img src="./img/youtube.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gdrive.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gmail.svg">
+                    </div>
+                    <!-- <div class="gApps-horizontal-line"></div> -->
+
+                    <div class="gApps-icon">
+                        <img src="./img/gdocs.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gslides.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gsheet.svg">
+                    </div>
+                    <div class="gApps-horizontal-line"></div>
+
+                    <div class="gApps-icon">
+                        <img src="./img/gmap.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gmeet.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gcalender.svg">
+                    </div>
+                    <!-- <div class="gApps-horizontal-line"></div> -->
+
+                    <div class="gApps-icon">
+                        <img src="./img/youtube.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gdrive.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gmail.svg">
+                    </div>
+                    <div class="gApps-horizontal-line"></div>
+
+                    <div class="gApps-icon">
+                        <img src="./img/gdocs.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gslides.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gsheet.svg">
+                    </div>
+                    <!-- <div class="gApps-horizontal-line"></div> -->
+
+                    <div class="gApps-icon">
+                        <img src="./img/gmap.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gmeet.svg">
+                    </div>
+                    <div class="gApps-icon">
+                        <img src="./img/gcalender.svg">
+                    </div>
+                </div>
+
                 <div class="account-info">
                     <img src="./img/sprinklr-logo.png" width="85" height="35" alt="sprinklr">
                     <span>K</span>
                 </div>
             </div>
         </div>
+        
         <div class="main-body">
-            <div class="option-menu" style="visibility: visible;">
+            <div class="option-menu" style="display: block;">
                 <div class="create-button-div">
                     <button> <img src="./img/plus.svg" width="20" height="20"> <span>&nbsp Create contact</span></button>
+                </div>
+
+                <div class="create-new-button-options-div create-new-button-options-div-display" id="create-new-button-options-div">
+                    <div class="create-new-button-option-sidebar">
+                        <img src="./img/personLight.svg" width="20px" height="20px">
+                        <span>Create a contact</span>
+                    </div>
+                    <div class="create-new-button-option-sidebar">
+                        <img src="./img/multiplePersonLight.svg" width="20px" height="20px">
+                        <span>Create multiple contacts</span>
+                    </div>
                 </div>
 
                 <div class="option-div contact-option" style="margin-top: 10px;">
@@ -136,21 +220,130 @@
             <div class="contact-display">
                 <div class="display-body">
                     <div class="image-open-book">
-                        <img src="./img/open-book.png" width="200" height="200">
+                        <img src="./img/open-book.png" width="150" height="150">
                     </div>
                     <div class="contact-info">No contacts yet</div>
                     <div class="link-contacts">
-                        <a href=""><img src="./img/person.svg" width="12px" height="12px">&nbsp Create contact</a>
+                        <a href="" id="create-new-contact-link"><img src="./img/person.svg" width="12px" height="12px">&nbsp Create contact</a>
                         <a href=""><img src="./img/import.svg" width="15px" height="15px">&nbsp Import contacts</a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="modal-display close-modal" id="modal-display">
+            <div class="modal-create-contact" id="modal-create-contact">
+                <div class="header-and-main-body">
+                    <div class="create-contact-modal-header">
+                        <div>Create new contact</div>
+                        <div class="create-contact-add-label">
+                            No label
+                        </div>
+                    </div>
+                    <div class="info-input">
+                        <div class="row-inputs">
+                            <div class="row-input-icon">
+                                <img src="./img/person.svg">
+                            </div>
+                            <div class="row-input-fields">
+                                <div class="row-input-field">
+                                    <span class="input-visibility-hidden">First name</span>
+                                    <input type="text" id="first-name-input" placeholder="First name">
+                                </div>
+                                <div class="row-input-field">
+                                    <span class="input-visibility-hidden">Last name</span>
+                                    <input type="text" placeholder="Last name">
+                                </div>
+                                <div class="input-visibility-hidden clear-input">
+                                    X
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-inputs">
+                            <div class="row-input-icon">
+                                <img src="./img/directory.svg">
+                            </div>
+                            <div class="row-input-fields">
+                                <div class="row-input-field">
+                                    <span class="input-visibility-hidden">Company</span>
+                                    <input type="text" placeholder="Company">
+                                </div>
+                                <div class="row-input-field">
+                                    <span class="input-visibility-hidden">Job title</span>
+                                    <input type="text" placeholder="Job title">
+                                </div>
+                                <div class="input-visibility-hidden clear-input">
+                                    X
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-inputs">
+                            <div class="row-input-icon">
+                                <img src="./img/phone.svg">
+                            </div>
+                            <div class="country-selection">
+                                <img src="./img/IndianFlag.svg" width="25px" height="20px">
+                            </div>
+                            <div class="row-input-fields">
+                                <div class="row-input-field phone-input">
+                                    <input type="text" placeholder="Phone">
+                                </div>
+                                <div class="row-input-field phone-label-input phone-label-input-display">
+                                    <input type="text" placeholder="Label">
+                                </div>
+                                <div class="input-visibility-hidden clear-input">
+                                    X
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+                <div class="create-contact-modal-footer">
+                    <div class="close-model-button" id="close-model-button">
+                        Cancel
+                    </div>
+                    <div class="save-contact-button" id="save-contact-button">
+                        Save
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
     <script>
-        let optionsMenu = document.getElementsByClassName("option-menu")[0].children;
 
-        for(let i=1; i<optionsMenu.length; i++) {
+        let createNewButtonInSidebar = document.getElementsByClassName("create-button-div")[0];
+        let createNewButtonOptionsInSidebar = document.getElementsByClassName("create-new-button-options-div")[0];
+        const bodyTag = document.getElementsByTagName("body")[0];
+
+        function handleCreateNewButtonOptionsInSidebar(event) {
+            //console.log(event.target);
+            if((event.target).closest("#create-new-button-options-div") === null) {
+                createNewButtonOptionsInSidebar.classList.add("create-new-button-options-div-display");
+                bodyTag.removeEventListener("click", handleCreateNewButtonOptionsInSidebar);
+            }
+        }
+
+        createNewButtonInSidebar.addEventListener("click", (event) => {
+            bodyTag.click();
+            event.stopPropagation();
+
+            if(createNewButtonOptionsInSidebar.classList.contains("create-new-button-options-div-display")) {
+                createNewButtonOptionsInSidebar.classList.remove("create-new-button-options-div-display");
+                sleep(200);
+                bodyTag.addEventListener("click", handleCreateNewButtonOptionsInSidebar);
+            }
+            else {
+                handleCreateNewButtonOptionsInSidebar(event);
+            }
+        })
+
+        let optionsMenu = document.getElementsByClassName("option-menu")[0].children;
+        //console.log(optionsMenu);
+        for(let i=2; i<optionsMenu.length; i++) {
             if((optionsMenu[i].classList[1] !== "label-option") && (optionsMenu[i].classList[1] !== "create-new-label-option")) {
                 optionsMenu[i].addEventListener("click", () => {
                     event.preventDefault();
@@ -180,30 +373,37 @@
             }
         })
 
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
         let menuOptionButton = document.getElementsByClassName("menu-option-icon")[0];
         let optionMenuDiv = document.getElementsByClassName("option-menu")[0];
-        menuOptionButton.addEventListener("click", () => {
-            if(optionMenuDiv.style.visibility === "hidden") {
+        menuOptionButton.addEventListener("click", async() => {
+            if(optionMenuDiv.style.display === "none") {
                 optionMenuDiv.style.display = "block";
-                optionMenuDiv.style.visibility = "visible";
-                optionMenuDiv.style.transition = "visibility 0.25s linear";
+                //optionMenuDiv.style.visibility = "visible";
+                optionMenuDiv.style.transform = "translateX(0px)";
+                optionMenuDiv.style.transition = "transform 0.25s linear";
             }
-            else if(optionMenuDiv.style.visibility === "visible") {
-                optionMenuDiv.style.visibility = "hidden";
-                optionMenuDiv.style.transform = "translateX(0)";
-                optionMenuDiv.style.transition = "transform .25s linear ,visibility 0.25s linear";
+            else if(optionMenuDiv.style.display === "block") {
+                optionMenuDiv.style.transform = "translateX(-300px)";
+                optionMenuDiv.style.transition = "transform 0.25s linear";
+                await sleep(250);
+                optionMenuDiv.style.display = "none";
+                //optionMenuDiv.style.visibility = "hidden";
             }
         })
 
-        function handleOptionMenuVisibility(event) {
+        function handleOptionMenuDisplay(event) {
             if(event.matches) {
-                optionMenuDiv.style.visibility = "hidden";
+                optionMenuDiv.style.display = "none";
             }
         }
 
         const mediaQuery1200 = window.matchMedia('(max-width: 1200px)');
-        mediaQuery1200.addListener(handleOptionMenuVisibility);
-        handleOptionMenuVisibility(mediaQuery1200);
+        mediaQuery1200.addListener(handleOptionMenuDisplay);
+        handleOptionMenuDisplay(mediaQuery1200);
 
         let searchIconClass = document.getElementsByClassName("search-option-icon")[0];
         let searchInputArea = searchIconClass.getElementsByTagName("input")[0];
@@ -235,6 +435,9 @@
         function handleRemoveSearchAreaInputListener(event) {
             if(event.matches) {
                 searchInputArea.style.display = "";
+                searchIcon.src = "./img/search.svg";
+                searchIcon.style.width = "";
+                searchIcon.style.height = "";
                 searchIcon.removeEventListener("click", handleSearchInputArea);
             }
             
@@ -247,7 +450,9 @@
         const mediaQuery901 = window.matchMedia("(min-width: 901px)");
         mediaQuery901.addListener(handleRemoveSearchAreaInputListener);
         handleRemoveSearchAreaInputListener(mediaQuery901);
-
     </script>
+
+    <script src="./src/ModalDisplay.js"></script>
+    <script src="./src/GAppsOverlay.js"></script>
 </body>
 </html>

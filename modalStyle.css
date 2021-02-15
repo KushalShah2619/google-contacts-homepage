@@ -1,0 +1,219 @@
+.modal-display {
+    z-index: 100;
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-create-contact {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    _overflow: scroll;
+
+    width: 700px;
+    max-width: 100%;
+    height: 400px;
+    max-height: 100%;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.1);
+}
+
+.close-modal {
+    display: none;
+}
+
+.header-and-main-body {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    height: 90%;
+}
+
+.create-contact-modal-header {
+    display: flex;
+    align-items: center;
+    height: 15%;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    padding: 0 25px;
+}
+
+.create-contact-add-label {
+    border: 1px solid  darkgray;
+    background-color: white;
+    color:  darkgray;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.info-input {
+    display: flex;
+    _flex: 1;
+    height: 85%;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+}
+
+.row-inputs {
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+    justify-content: center;
+}
+
+.row-input-icon > img {
+    width: 20px;
+    height: 20px;
+    padding: 20px 20px 0 30px;
+    _margin-right: 20px;
+}
+
+.row-input-fields {
+    display: flex;
+    flex: 1;
+    margin: 0 30px;
+}
+
+.row-input-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    _border-bottom: 2px solid rgba(0,0,0,0.3);
+    margin-right: 25px;
+}
+
+.row-input-field > span {
+    font-size: 12px;
+    color: royalblue;
+}
+
+.row-input-field > input {
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0,0.3);
+    background-color: transparent;
+    width: 100%;
+    padding: 4px 0;
+}
+
+.row-input-field > input:focus {
+    outline: none;
+    border-bottom: 2px solid royalblue;
+}
+
+.row-input-field > div{
+    position: absolute;
+    color: darkgray;
+    background-color: transparent;
+}
+
+.input-visibility-hidden {
+    visibility: hidden;
+}
+
+.clear-input {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    color: darkgray;
+}
+
+.clear-input:hover {
+    cursor: pointer;
+}
+
+.create-contact-modal-footer {
+    padding: 5px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;    
+    border-top: 1px solid rgba(0,0,0,0.12);
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+}
+
+.close-model-button {
+    color: #3783ee;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 20px;
+}
+
+.close-model-button:hover {
+    cursor: pointer;
+    background-color: #e8f0fe;
+}
+
+.save-contact-button {
+    padding: 10px;
+    margin: 0 20px;
+    color: darkgray;
+    cursor: default;
+}
+
+.active-save-button {
+    color: #3783ee;
+    border-radius: 10px;
+}
+
+.active-save-button:hover {
+    background-color: #e8f0fe;
+    cursor: pointer;
+}
+
+.country-selection {
+    padding: 20px 0 0 30px;
+}
+
+.phone-input {
+    width: 82%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 25px;
+}
+
+.phone-input > input {
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0,0.3);
+    background-color: transparent;
+    width: 100%;
+    padding-top: 6px;
+}
+
+.phone-input > input:focus {
+    outline: none;
+    border-bottom: 2px solid royalblue;    
+}
+
+.phone-label-input {
+    width: 44%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 25px;
+}
+
+.phone-label-input > input {
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0,0.3);
+    background-color: transparent;
+    width: 100%;
+    padding-top: 6px;
+}
+
+.phone-label-input > input:focus {
+    outline: none;
+    border-bottom: 2px solid royalblue;    
+}
+
+.phone-label-input-display {
+    display: none;
+}

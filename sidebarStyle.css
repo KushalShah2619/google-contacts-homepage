@@ -1,0 +1,131 @@
+.option-menu {
+    _border: 1px solid red;
+    _transform: translateX(0);
+    _transition: transform 0.5s linear, visibility 1s ease-in;
+    width: 300px;
+    position: relative;
+    box-shadow: 2px 0 2px rgb(0,0,0,0.1);
+    overflow: scroll;
+}
+
+.create-button-div {
+    top: 0;
+    z-index: 2;
+    background-color: white;
+    padding: 20px 20px 20px 10px;
+    position: sticky;
+    box-shadow: 0px 2px 2px rgb(0,0,0,0.1);
+}
+
+.create-button-div > button {
+    text-align: center;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px 10px 15px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 2px rgb(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+}
+
+.create-button-div > button:hover {
+    background-color: #e8f0fe;
+    color: #3783ee;
+}
+
+.create-button-div > button > span {
+    font-size: 15px;
+    color:  black;
+}
+
+.create-new-button-options-div {
+    z-index: 3;
+    position: absolute;
+    left: 2%;
+    top: 1%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+.create-new-button-options-div-display {
+    display: none;
+}
+
+.create-new-button-option-sidebar {
+    margin: 5px 0;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    _color: darkgray;
+}
+
+.create-new-button-option-sidebar:hover {
+    background-color: #f1f3f4;
+}
+
+.create-new-button-option-sidebar > img {
+    margin-right: 20px;
+}
+
+
+.option-div {
+    border-radius: 0 25px 25px 0;
+}
+
+.option-link {
+    line-height: 1.25rem;
+    padding: 10px 26px;
+    vertical-align: middle;
+    _font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    color: black;
+}
+
+.option-link:visited {
+    color: black;
+}
+
+.option-link:hover {
+    background: #f1f3f4;
+    border-radius: 0 25px 25px 0;
+}
+
+.option-link > img {
+    margin: 0 10px;
+}
+
+.option-link > span {
+    margin: 0 10px;
+    color: inherit;
+}
+
+.active-option, .active-option:hover {
+    color: #3783ee;
+    background: #e8f0fe;
+    border-radius: 0 25px 25px 0;
+}
+
+.horizontal-line {
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    margin: 5px 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .option-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .option-menu {
+        position: absolute;
+        background: white;
+    }
+}
